@@ -32,7 +32,8 @@ module MailerCity
       new(template: "test_template", params: args)
     end
   end
+
+  class TestMailer < Mail
+  end
 end
 
-class TestMailer < MailerCity::Mail
-end
