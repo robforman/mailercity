@@ -1,5 +1,5 @@
 Mailercity::Application.routes.draw do
-  match 'deliver/:mailer/:template' => 'emails#create'
+  match ':mailer/:template' => 'emails#create'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

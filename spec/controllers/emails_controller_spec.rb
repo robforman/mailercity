@@ -4,7 +4,7 @@ describe EmailsController do
 
   describe "POST 'create'" do
     it "routes to the email controller's create action" do
-       { :post => '/deliver/test_mailer/test_template' }.should route_to(:controller => 'emails', :action => 'create', :mailer => 'test_mailer', :template => 'test_template')
+       { :post => '/test_mailer/test_template' }.should route_to(:controller => 'emails', :action => 'create', :mailer => 'test_mailer', :template => 'test_template')
     end
 
     context "a known mailer and template" do
