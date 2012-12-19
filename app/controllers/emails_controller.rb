@@ -4,7 +4,8 @@ class EmailsController < ApplicationController
     template_method = params.fetch(:template).to_sym
 
     if mailer_class && mailer_class.respond_to?(template_method)
-      email = mailer_class.public_send(template_method, params).deliver
+      args = params.fetch(:args)
+      email = mailer_class.public_send(template_method, *args).deliver
       head :created, :location => "/"
     else
       head :bad_request
